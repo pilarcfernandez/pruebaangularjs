@@ -7,10 +7,11 @@
         	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/base.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/headerComponent.js"></script>
 		<script src="js/menuComponent.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+		
 		
 	</head>
 	<body >
@@ -18,11 +19,10 @@
 			<header-component user="hdr.user"></header-component>
 		</header>
 		<content>
-			<div class="row">
-				
+			<div class="row">				
 				<section class="col-4" ng-controller="MenuCtrl as menu">
 					<div ng-repeat="option in menu.options">
-						<span><a ng-href="option.url">{{option.name}}</a></span>
+						<span><a href="{{option.url}}">{{option.name}}</a></span>
 					</div>
 					<!-- <menu-component options="menu.options" ></menu-component> -->
 				</section>
