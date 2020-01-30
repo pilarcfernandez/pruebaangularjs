@@ -1,1 +1,8 @@
-<span>lista productos</span>
+<div class="row" ng-repeat="prod in prods.products">
+    <div class="col-3"><span>{{prod.name}}</span></div>
+    <div class="col-3">{{prod.price}}</div>
+    <div class="col-3">{{prod.qt}}</div>
+</div>
+<div>
+    <product-detail productID="prod.id"></product-detail>
+</div>

@@ -1,7 +1,7 @@
 angular.module('pruebaApp', ['ngRoute'])
 
-    .config(['$routeProvider', '$locationProvider',
-        function ($routeProvider, $locationProvider) {
+    .config(['$routeProvider',
+        function ($routeProvider) {
             $routeProvider
                 .when('/listProducts', {
                     templateUrl: 'partial/listProducts.html',
@@ -13,34 +13,28 @@ angular.module('pruebaApp', ['ngRoute'])
                     controller: 'QuoteCtrl',
                     controllerAs: 'quot'
                 });
-
-            $locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false
-              });
         }])
 
-    .controller('HeaderCtrl', function HeaderCtrl() {
-        this.user = {
+    .controller('HeaderCtrl', function() {
+        this.username = {
             name: 'Anonymous'
         };
     })
 
     .controller('MenuCtrl', function MenuCtrl() {
         this.options = [
-            { name: 'List products', url: 'listProducts', icon: '' },
+            { name: 'My products', url: 'listProducts', icon: '' },
             { name: 'Fast Quoting', url: 'fastQuote', icon: '' },
             { name: 'My user settings', url: 'profile.html', icon: '' }
         ];
     })
-
     .controller('ListProductsCtrl', function ListProductsCtrl() {
         this.products = [
-            { name: 'Anonymous', price: '' }
+            { id: 1, name: 'Product 1', price: '105€', qt: 5, description: 'Lorem imspum' },
+            { id: 2, name: 'Product 2', price: '78€', qt: 3, description: 'Lorem imspum' }
         ];
     })
 
-
     .controller('QuoteCtrl', function QuoteCtrl() {
-        
+
     })

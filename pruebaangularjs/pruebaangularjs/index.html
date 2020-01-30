@@ -10,19 +10,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/headerComponent.js"></script>
-		<script src="js/menuComponent.js"></script>
-		
+		<script src="js/menuComponent.js"></script>	
 		
 	</head>
 	<body >
-		<header class="content-fluid" ng-controller="HeaderCtrl as hdr">
-			<header-component user="hdr.user"></header-component>
+		<header class="content-fluid" >
+			<header-component user="hdr.username"></header-component>
 		</header>
 		<content>
 			<div class="row">				
 				<section class="col-4" ng-controller="MenuCtrl as menu">
 					<div ng-repeat="option in menu.options">
-						<span><a href="{{option.url}}">{{option.name}}</a></span>
+						<span><a href="#!{{option.url}}">{{option.name}}</a></span>
 					</div>
 					<!-- <menu-component options="menu.options" ></menu-component> -->
 				</section>
